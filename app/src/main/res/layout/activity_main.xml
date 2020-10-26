@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.example.dic_v1.MainActivity"
+    tools:openDrawer="start"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/button"
+                android:layout_marginRight="15dp"
+                android:padding="10dp"
+                android:hint="Tap to Speak"
+                android:id="@+id/edt_text"
+                android:layout_centerInParent="true"
+                />
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:backgroundTint="#F9F8FA"
+                android:paddingRight="10dp"
+                android:src="@drawable/ic_baseline_keyboard_voice_24"
+                android:layout_alignParentRight="true"
+                android:id="@+id/button"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            > </ListView>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/nut_them"
+                android:layout_width="70dp"
+                android:layout_height="55dp"
+                android:clickable="true"
+
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_baseline_add_24" />
+
+
+
+        </RelativeLayout>
+    </LinearLayout>
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_drawer" />
+</androidx.drawerlayout.widget.DrawerLayout>
